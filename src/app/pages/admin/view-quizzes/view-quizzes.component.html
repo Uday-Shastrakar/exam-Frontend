@@ -11,14 +11,14 @@
     <mat-card-content>
         <p>{{q.description}}</p>
     </mat-card-content>
-    <mat-card>
+    <mat-card-actions>
         <button [routerLink]="'/admin/view-questions/'+ q.qid + '/' + q.title" mat-raised-button>Questions</button>
         <button mat-button class="ml20">Max Marks {{q.maxMarks}}</button>
         <button mat-button class="ml20">Questions {{q.numberOfQuestion}}</button>
         <button [routerLink]="'/admin/quiz/'+ q.qid" mat-raised-button color="primary" class="ml20"> Update</button>
         <button mat-raised-button class="ml20"> Attempts</button>
         <button mat-raised-button  color="warn" class="ml20" (click)="deleteQuiz(q.qid)"> Delete</button>
-    </mat-card>
+    </mat-card-actions>
 </mat-card>
 
 

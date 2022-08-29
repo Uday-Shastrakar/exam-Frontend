@@ -8,9 +8,19 @@
     </div>
 </div> -->
 
-
-<!-- navbar static -->
-<app-navbar></app-navbar>
+<div ngxUiLoaderBlurred (blur)="10">
+    <!-- This page content will be blurred/frosted when foreground loader is showed -->
+    <app-navbar></app-navbar>
 
 <!-- dynamic content -->
 <router-outlet></router-outlet>
+
+  </div>
+<!-- navbar static -->
+<ngx-ui-loader 
+fgsColor="#f2f211" 
+pbColor="#f2f211"
+text="Please Wait..."
+fgsType="wandering-cubes"
+
+></ngx-ui-loader>

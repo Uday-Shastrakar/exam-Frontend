@@ -14,7 +14,10 @@ import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { SuperComponent } from './pages/super/super/super.component';
+import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
+import { StartComponent } from './pages/user/start/start.component';
+
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { AdminGuard } from './services/admin.guard';
 import { NormalGuard } from './services/normal.guard';
@@ -23,7 +26,7 @@ import { SuperGuard } from './services/super.guard';
 const routes: Routes = [
 {
   path:'',
-  component:HomeComponent,
+  component: HomeComponent,
   pathMatch:'full',
 
 },
@@ -34,67 +37,78 @@ const routes: Routes = [
 },
 {
   path:'login',
-  component:LoginComponent,
+  component: LoginComponent,
   pathMatch:'full',
 },
 {
   path:"admin",
-  component:DashboardComponent,
+  component: DashboardComponent,
   canActivate:[AdminGuard],
   children:[
     {
       path:'',
-      component:WelcomeComponent,
+      component: WelcomeComponent,
 
     },
     { 
       path:'profile',
-      component:ProfileComponent,
+      component: ProfileComponent,
     },
     {
       path:'categories',
-      component:ViewCategoriesComponent,
+      component: ViewCategoriesComponent,
     },
     {
       path:'add-category',
-      component:AddCategoryComponent,
+      component: AddCategoryComponent,
     },
     {
        path:'quizzes',
-       component:ViewQuizzesComponent,
+       component: ViewQuizzesComponent,
     },
     {
       path:'add-quiz',
-      component:AddQuizComponent
+      component: AddQuizComponent
     },
     {
       path:'quiz/:qid',
-      component:UpdateQuizComponent,
+      component: UpdateQuizComponent,
 
     },
     {
       path:'view-questions/:qid/:title',
-      component:ViewQuizQuestionsComponent,
+      component: ViewQuizQuestionsComponent,
      },
      {
       path:'add-question/:qid/:title',
-      component:AddQuestionComponent,
+      component: AddQuestionComponent,
      },
   ],
   
 },
 {
   path:"user-dashboard",
-  component:UserDashboardComponent,
+  component: UserDashboardComponent,
   canActivate:[NormalGuard],
   children:[{
     path:':catId',
-    component:LoadQuizComponent,
-  }]
+    component: LoadQuizComponent,
+  },
+  {
+    path:'instructions/:qid',
+    component: InstructionsComponent,
+  },
+ 
+]
+},
+{
+  path:"start/:qid",
+  component: StartComponent,
+  canActivate:[NormalGuard],
 },
 {
   path:"super",
-  component:SuperComponent,
+  component: SuperComponent,
   pathMatch:'full',
   canActivate:[SuperGuard],
 },
