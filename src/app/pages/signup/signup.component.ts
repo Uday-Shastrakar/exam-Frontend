@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
-import swal from 'sweetalert2';
+
+
 
 @Component({
   selector: 'app-signup',
@@ -34,7 +35,45 @@ formSubmit(){
     //  horizontalPosition:'right'
    });
     return;
+  }else if(this.user.password=='' || this.user.password==null){
+
+    this.snack.open('password is required !!','',{
+      duration:3000,
+    });
+    return;
+  }else if(this.user.firstName=='' || this.user.firstName==null){
+
+    this.snack.open('firstName is required !!','',{
+      duration:3000,
+    });
+    return;
+  }else if(this.user.lastName=='' || this.user.lastName==null){
+
+    this.snack.open('lastName is required !!','',{
+      duration:3000,
+    });
+    return;
+  }else if(this.user.email=='' || this.user.email==null){
+
+    this.snack.open('Email is required !!','',{
+      duration:3000,
+    });
+    return;
+  }else if(this.user.phone=='' || this.user.phone==null){
+
+    this.snack.open('Phone is required !!','',{
+      duration:3000,
+    });
+    return;
   }
+
+
+
+
+
+
+
+
 
 
 

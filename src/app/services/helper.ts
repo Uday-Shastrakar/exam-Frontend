@@ -1,2 +1,2 @@
-let baseUrl="http://localhost:8080";
-export default baseUrl ;
+let baseUrl='http://udayshastrakar.tech:8080';
+export default baseUrl;

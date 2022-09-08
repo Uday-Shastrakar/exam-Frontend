@@ -74,7 +74,7 @@
                         required
                         [(ngModel)]="user.phone"
                         name="phone"
-                        type="number" matInput placeholder="Enter here">
+                        type="text" pattern="[7-9]{1}[0-9]{9}"  matInput placeholder="Enter here">
                        <mat-hint>Hint</mat-hint>
                       </mat-form-field>
                       <div class="container text-center">

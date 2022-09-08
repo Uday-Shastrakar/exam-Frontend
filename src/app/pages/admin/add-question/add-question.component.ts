@@ -27,7 +27,7 @@ question:any={
 
   ngOnInit(): void {
     this.qId=this._route.snapshot.params['qid'];
-    this.qTitle=this._route.snapshot.params['title']
+    this.qTitle=this._route.snapshot.params['title'];
     this.question.quiz['qid'] =this.qId;
   }
  

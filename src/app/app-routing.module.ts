@@ -4,6 +4,7 @@ import { AddCategoryComponent } from './pages/admin/add-category/add-category.co
 import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
 import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+
 import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
 import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
 import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/view-quiz-questions.component';
@@ -11,6 +12,7 @@ import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.co
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { SuperComponent } from './pages/super/super/super.component';
@@ -83,6 +85,7 @@ const routes: Routes = [
       path:'add-question/:qid/:title',
       component: AddQuestionComponent,
      },
+    
   ],
   
 },
@@ -97,6 +100,11 @@ const routes: Routes = [
   {
     path:'instructions/:qid',
     component: InstructionsComponent,
+  },
+  { 
+    path:"profile-user",
+    component:ProfileComponent,
+
   },
  
 ]
