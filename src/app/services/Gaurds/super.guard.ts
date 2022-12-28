@@ -1,30 +1,23 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-import { LoginService } from './login.service';
-
+import { LoginService } from '../login.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AdminGuard implements CanActivate {
+export class SuperGuard implements CanActivate {
   constructor(private login:LoginService,private router : Router){}
   canActivate(
-    _route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): 
-    Observable<boolean 
-    | UrlTree> 
-    | Promise<boolean 
-    | UrlTree> 
-    | boolean 
-    | UrlTree {
-      if(this.login.isLoggedIn()&& this.login.getUserRole() =='ADMIN')
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+      if(this.login.isLoggedIn()&& this.login.getUserRole() =='SUPER')
       {
         return true;
       } 
       this.router.navigate(['login']);
       return false;
-      
- }
-     
+    
+  }
+  
 }

@@ -21,9 +21,9 @@ import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import { StartComponent } from './pages/user/start/start.component';
 
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
-import { AdminGuard } from './services/admin.guard';
-import { NormalGuard } from './services/normal.guard';
-import { SuperGuard } from './services/super.guard';
+import { AdminGuard } from './services/Gaurds/admin.guard';
+import { NormalGuard } from './services/Gaurds/normal.guard';
+import { SuperGuard } from './services/Gaurds/super.guard';
 
 const routes: Routes = [
 {

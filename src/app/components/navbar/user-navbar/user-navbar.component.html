@@ -1,0 +1,49 @@
+
+<!-- <p>navbar works!</p> -->
+<mat-toolbar color="primary">
+    <a
+    routerLink="/user-dashboard/"
+     mat-icon-button 
+     class="example-icon" 
+     aria-label="Example icon-button with menu icon">
+      <mat-icon>home</mat-icon>
+</a>
+    <span>seed Exam</span>
+    <span class="example-spacer"></span>
+    <a
+    *ngIf="!isLoggedIn"
+    [routerLink]="'/login'"
+     mat-icon-button
+      class="example-icon favorite-icon" 
+      aria-label="Example icon-button with heart icon">
+     Login
+</a>
+    <a
+    *ngIf="!isLoggedIn"
+    [routerLink] ="'/signup'"
+    mat-icon-button 
+    class="example-icon mr20 ml20"
+     aria-label="Example icon-button with share icon">
+      Register
+</a>
+<button
+  
+    *ngIf="isLoggedIn && user"
+    class="example-icon favourite-icon   ml20"
+    mat-button 
+    
+    
+     aria-label="Example icon-button with share icon">
+          {{user.username}}
+         
+</button> 
+<a
+    (click)="logout()"
+    *ngIf="isLoggedIn"
+    mat-icon-button 
+    class="example-icon mr20 ml20"
+     aria-label="Example icon-button with share icon">
+      Logout
+</a>
+
+  </mat-toolbar>
